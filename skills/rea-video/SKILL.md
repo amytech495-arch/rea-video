@@ -87,7 +87,7 @@ rea-video summary out/ref/breakdown.json      # 用并入后的结果写回复
 
 按 `references/output-template.md` 回复：先一句话结论，再内容与角色（这条视频讲什么、主要角色和场景），叙事线（每一步在抓注意、补信息还是给结论，见 `video/content.md`；建议用户保留这条线、换成自己的案例和素材来重写，不只是换个主角），然后复刻方案（按生成单元 / 拍摄场次组织）、分镜表、剪辑包装、声音、真实素材清单、不确定点，最后给 `report.html` 路径（用户版报告：先讲三层、再给照着做的复刻步骤，用户自己就能复刻）；用户要 PDF 时运行 `rea-video pdf out/ref` 生成 `report.pdf`（需要本机有 Chrome / Chromium / Edge）。不要把 breakdown.json 贴进对话。
 
-用户想复刻、二创、做同款或照着做一条自己的，或想知道这条视频怎么做出来、怎么实现时，在回复末尾告知可以用哪些工具来做（`references/remake-tools.md` 里列的都写，各一句）；用户选了哪种，按那个文件「用户选了以后」帮他接上。
+用户想复刻、二创、做同款或照着做一条自己的，或想知道这条视频怎么做出来、怎么实现时，在回复末尾告知可以用哪些工具来做（`references/remake-tools.md` 里列的都写，各一句）；用户要用 ChatCut 时，按那个文件帮他装好接上。
 
 **报告和回复都用用户的语言。**语言的判断顺序：用户明确指定的语言（「用英文出报告」「report in Chinese」）> 用户提问所用的语言 > `rea-video memory` 里的 `lang` 偏好 > 中文。
 - 工具支持 `--lang zh` 和 `--lang en`：`decompose` 时就传对，报告文件（`report.html` / `report.md`）、`summary` 输出、VLM 的画面描述和提示词都会是该语言；忘了传可以在 `apply-review out/ref --lang en` 时补上（会重新生成结论和报告文字；VLM 已写好的描述和提示词保持原语言）。看图复核时，`review_answers.json` 里的 evidence / description / prompt 也用这个语言写。
@@ -131,7 +131,7 @@ rea-video summary out/ref/breakdown.json      # 用并入后的结果写回复
 | `references/materials.md` | 真实素材复核 |
 | `references/output-template.md` | 交付格式 |
 | `references/remake.md` | 复刻、对接 capsule-cinema |
-| `references/remake-tools.md` | 复刻可以用哪些工具和方式，告诉用户有哪些可选；用户选了以后怎么接上 |
+| `references/remake-tools.md` | 复刻可以用哪些工具和方式，告诉用户有哪些可选；用户要用 ChatCut 时怎么装好接上 |
 | `references/memory.md` | 记住纠正和偏好 |
 
 ## 4. 不要做的事
